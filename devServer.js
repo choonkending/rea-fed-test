@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
+var jsonData = require('./data/property.json');
 
 var app = express();
 var compiler = webpack(config);
@@ -12,6 +13,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
+
+// End point which mocks data returned from property.json file
+app.get('/property', function(req, res) {
+  res.json(jsonData);
+});
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
