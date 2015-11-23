@@ -1,15 +1,16 @@
 import promise from 'es6-promise';
 import fetch from 'isomorphic-fetch';
+
+import { PROPERTY_REQUEST, 
+  PROPERTY_SUCCESS, 
+  PROPERTY_FAILURE } from 'constants';
 // isomorphic-fetch requires an es6-polyfill
 promise.polyfill();
 
-const PROPERTY_REQUEST = 'PROPERTY_REQUEST';
-const PROPERTY_SUCCESS = 'PROPERTY_SUCCESS';
-const PROPERTY_FAILURE = 'PROPERTY_FAILURE';
-
 function fetchPropertyRequest() {
   return {
-    type: PROPERTY_REQUEST
+    type: PROPERTY_REQUEST,
+    isLoading: true
   };
 }
 
