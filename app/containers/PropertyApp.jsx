@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import LoadingIndicator from 'components/LoadingIndicator';
 import { loadPropertyData } from 'actions/property';
+import LoadingIndicator from 'components/LoadingIndicator';
+import Card from 'components/Card';
 
 class PropertyApp extends Component {
 
@@ -14,18 +14,10 @@ class PropertyApp extends Component {
   render() {
     const { isFetching, results, savedProperty } = this.props;
     const renderedResults = results.map(property => {
-      return (<div>
-        <div>ID {property.id}</div>
-        <div>{property.price}</div>
-        <img src={property.mainImage} />
-      </div>);
+      return (<Card {...property} />);
     });
     const renderedSavedProperty = savedProperty.map(property => {
-      return (<div>
-        <div>ID {property.id}</div>
-        <div>{property.price}</div>
-        <img src={property.mainImage} />
-      </div>);
+      return (<Card {...property} />);
     });
     return (
         <div>
