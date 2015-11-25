@@ -18,8 +18,8 @@ export default function propertyApp(state={
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
-        results: data.results,
-        savedProperty: data.saved
+        results: action.body.results,
+        savedProperty: action.body.saved
       });
     case PROPERTY_FAILURE:
       return Object.assign({}, state, {

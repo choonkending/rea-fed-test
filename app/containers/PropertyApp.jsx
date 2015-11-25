@@ -12,11 +12,27 @@ class PropertyApp extends Component {
   }
 
   render() {
-    const { isFetching } = this.props;
+    const { isFetching, results, savedProperty } = this.props;
+    const renderedResults = results.map(property => {
+      return (<div>
+        <div>ID {property.id}</div>
+        <div>{property.price}</div>
+        <img src={property.mainImage} />
+      </div>);
+    });
+    const renderedSavedProperty = savedProperty.map(property => {
+      return (<div>
+        <div>ID {property.id}</div>
+        <div>{property.price}</div>
+        <img src={property.mainImage} />
+      </div>);
+    });
     return (
         <div>
           <h1>Property App</h1>
           <LoadingIndicator isFetching={isFetching} />
+          <div>{renderedResults}</div>
+          <div>{renderedSavedProperty}</div>
         </div>);
 
   }
