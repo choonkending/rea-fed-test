@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import LoadingIndicator from 'components/LoadingIndicator';
+import { loadPropertyData } from 'actions/property';
+
 class PropertyApp extends Component {
 
-  render() {
+  componentDidMount() {
+    // make a request to fetch property data
+    this.props.dispatch(loadPropertyData());
+  }
 
+  render() {
+    const { isFetching } = this.props;
     return (
         <div>
           <h1>Property App</h1>
+          <LoadingIndicator isFetching={isFetching} />
         </div>);
 
   }
@@ -17,4 +26,4 @@ class PropertyApp extends Component {
 // Note: Please remove once we have more Container 
 // level Components. This is not performant as 
 // PropertyApp will rerender after every action.
-export default connect(state => state)(PropertyApp);
+export default connect(state => state.propertyApp)(PropertyApp);
