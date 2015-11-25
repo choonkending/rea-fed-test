@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadPropertyData } from 'actions/property';
 import LoadingIndicator from 'components/LoadingIndicator';
-import Card from 'components/Card';
+import Column from 'components/Column';
 
 class PropertyApp extends Component {
 
@@ -13,18 +13,12 @@ class PropertyApp extends Component {
 
   render() {
     const { isFetching, results, savedProperty } = this.props;
-    const renderedResults = results.map(property => {
-      return (<Card {...property} />);
-    });
-    const renderedSavedProperty = savedProperty.map(property => {
-      return (<Card {...property} />);
-    });
     return (
         <div>
           <h1>Property App</h1>
           <LoadingIndicator isFetching={isFetching} />
-          <div>{renderedResults}</div>
-          <div>{renderedSavedProperty}</div>
+          <Column properties={results} />
+          <Column properties={savedProperty} />
         </div>);
 
   }
