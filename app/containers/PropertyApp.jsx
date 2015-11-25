@@ -4,6 +4,8 @@ import { loadPropertyData } from 'actions/property';
 import LoadingIndicator from 'components/LoadingIndicator';
 import Column from 'components/Column';
 
+import styles from 'containers/PropertyApp.scss';
+
 class PropertyApp extends Component {
 
   componentDidMount() {
@@ -14,8 +16,7 @@ class PropertyApp extends Component {
   render() {
     const { isFetching, results, savedProperty } = this.props;
     return (
-        <div>
-          <h1>Property App</h1>
+        <div className={styles.container}>
           <LoadingIndicator isFetching={isFetching} />
           <Column properties={results} />
           <Column properties={savedProperty} />
