@@ -16,10 +16,10 @@ class PropertyApp extends Component {
   render() {
     const { isFetching, results, savedProperty } = this.props;
     return (
-        <div className={styles.container}>
+        <div className={styles['container']}>
           <LoadingIndicator isFetching={isFetching} />
-          <Column properties={results} />
-          <Column properties={savedProperty} />
+          <Column heading="Results" properties={results} />
+          <Column heading="Saved Properties" properties={savedProperty} />
         </div>);
 
   }
