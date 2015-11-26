@@ -1,8 +1,8 @@
 import promise from 'es6-promise';
 import fetch from 'isomorphic-fetch';
-import { PROPERTY_REQUEST, 
-  PROPERTY_SUCCESS, 
-  PROPERTY_FAILURE } from '../constants';
+import { FETCH_PROPERTY_REQUEST, 
+  FETCH_PROPERTY_SUCCESS, 
+  FETCH_PROPERTY_FAILURE } from '../constants';
 
 // isomorphic-fetch requires an es6-polyfill
 promise.polyfill();
@@ -12,7 +12,7 @@ const API_ENDPOINT = 'http://localhost:3000/property'
 
 export function fetchPropertyRequest() {
   return {
-    type: PROPERTY_REQUEST,
+    type: FETCH_PROPERTY_REQUEST,
     isLoading: true
   };
 }
@@ -22,7 +22,7 @@ export function fetchPropertyRequest() {
  */
 export function fetchPropertySuccess(body) {
   return {
-    type: PROPERTY_SUCCESS,
+    type: FETCH_PROPERTY_SUCCESS,
     body
   };
 }
@@ -32,7 +32,7 @@ export function fetchPropertySuccess(body) {
  */
 function fetchPropertyFailure(error) {
   return {
-    type: PROPERTY_FAILURE,
+    type: FETCH_PROPERTY_FAILURE,
     error
   };
 }
@@ -53,6 +53,4 @@ export function loadPropertyData() {
 
   };
 }
-
-
 

@@ -15,7 +15,7 @@ describe('Async Loading Action', () => {
     nock.cleanAll();
   });
 
-  it('creates PROPERTY_SUCCESS when fetching property results has been done', (done) => {
+  it('creates FETCH_PROPERTY_SUCCESS when fetching property results has been done', (done) => {
     nock('http://localhost:3000')
       .get('/property')
       .reply(200, { results: 
@@ -25,8 +25,8 @@ describe('Async Loading Action', () => {
        });
 
     const expectedActions = [
-      { type: types.PROPERTY_REQUEST, isLoading: true },
-      { type: types.PROPERTY_SUCCESS, body: {
+      { type: types.FETCH_PROPERTY_REQUEST, isLoading: true },
+      { type: types.FETCH_PROPERTY_SUCCESS, body: {
         results:
           [
             "ID 1"

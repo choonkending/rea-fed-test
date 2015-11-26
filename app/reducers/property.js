@@ -1,6 +1,6 @@
-import { PROPERTY_REQUEST, 
-  PROPERTY_SUCCESS, 
-  PROPERTY_FAILURE } from 'constants';
+import { FETCH_PROPERTY_REQUEST, 
+  FETCH_PROPERTY_SUCCESS, 
+  FETCH_PROPERTY_FAILURE } from 'constants';
 
 export default function propertyApp(state={
   isFetching: false,
@@ -9,19 +9,19 @@ export default function propertyApp(state={
   savedProperty: []
 }, action) {
   switch(action.type) {
-    case PROPERTY_REQUEST:
+    case FETCH_PROPERTY_REQUEST:
       return Object.assign({}, state, {
         isFetching: true,
         didInvalidate: false
       });
-    case PROPERTY_SUCCESS:
+    case FETCH_PROPERTY_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
         results: action.body.results,
         savedProperty: action.body.saved
       });
-    case PROPERTY_FAILURE:
+    case FETCH_PROPERTY_FAILURE:
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: true
