@@ -17,5 +17,6 @@
 
 # Assumptions
 1. You have node and npm in your environment.
+  - For [testing purposes](https://github.com/tmpvar/jsdom) please use Node.js 4 or newer.
 2. You are not adverse to css-modules. Otherwise, we can have a chat about BEM styling and css-modules. :)
 3. For the purpose of this test, we run on IE10+ (because I opted to use flexbox)

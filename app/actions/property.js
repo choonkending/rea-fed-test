@@ -2,7 +2,7 @@ import promise from 'es6-promise';
 import fetch from 'isomorphic-fetch';
 import { PROPERTY_REQUEST, 
   PROPERTY_SUCCESS, 
-  PROPERTY_FAILURE } from 'constants';
+  PROPERTY_FAILURE } from '../constants';
 
 // isomorphic-fetch requires an es6-polyfill
 promise.polyfill();
