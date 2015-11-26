@@ -29,7 +29,8 @@ module.exports = {
       include: path.join(__dirname, 'app')
     }, {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader?module&localIdentName=[local]__[hash:base64:5]!autoprefixer-loader'
+        loader: 'style-loader!css-loader?module&localIdentName=[local]__[hash:base64:5]!autoprefixer-loader!sass?includePaths[]='
+                + encodeURIComponent(path.resolve(__dirname, './app/scss'))
       },
     ]
   }

@@ -1,16 +1,20 @@
 import React, { Component, PropTypes } from 'react';
+import styles from 'components/Card.scss';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 export default class Card extends Component {
 
   render() {
     const { price, agency, mainImage } = this.props;
     return (
-      <div>
+      <div className={cx('card', 'card--gray-theme')}>
         <div style={ { backgroundColor: agency.brandingColors.primary }}>
           <img src={agency.logo}/>
         </div>
         <div>
-          <img src={mainImage} />
+          <img className={styles['card__main-image']} src={mainImage} />
         </div>
         <div>{price}</div>
       </div>
