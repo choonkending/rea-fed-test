@@ -11,12 +11,12 @@ export default class Card extends Component {
     return (
       <div className={cx('card', 'card--gray-theme')}>
         <div style={ { backgroundColor: agency.brandingColors.primary }}>
-          <img src={agency.logo}/>
+          <img className={cx('card__agency-logo')} src={agency.logo}/>
         </div>
         <div>
-          <img className={styles['card__main-image']} src={mainImage} />
+          <img className={cx('card__main-image')} src={mainImage} />
         </div>
-        <div>{price}</div>
+        <div className={cx('card__price')}>{price}</div>
       </div>
     );
   }

@@ -1,3 +1,9 @@
-.column__heading {
-  text-align: center;
+@import "settings.scss";
+
+.column {
+  font-family: $font-family;
 }
+
+  .column__heading {
+    text-align: center;
+  }

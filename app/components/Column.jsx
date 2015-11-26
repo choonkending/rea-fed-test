@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import Card from 'components/Card';
+import classNames from 'classnames/bind';
 import styles from 'components/Column.scss';
+
+const cx = classNames.bind(styles);
 
 export default class Column extends Component {
 
@@ -12,7 +15,8 @@ export default class Column extends Component {
     })
     return (
       <div>
-        <h1 className={styles['column__heading']}>{heading}</h1>
+        <h1 className={
+          cx('column','column__heading')}>{heading}</h1>
         {renderedProperties}
       </div>
     );
