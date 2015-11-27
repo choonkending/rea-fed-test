@@ -15,6 +15,11 @@
 * Then the property card with ID 4 will be removed to the Saved Properties column
 
 
+# Questions
+1. When I `npm install` it sometimes stalls when installing node-sass.
+Sometimes node-sass just hangs during npm installation. So `rm -rf node_modules` and try again.
+If that does not work, `npm install node-sass` first, then run `npm install`. 
+
 # Assumptions
 1. You have node and npm in your environment.
   - For [testing purposes](https://github.com/tmpvar/jsdom) please use Node.js 4 or newer.
