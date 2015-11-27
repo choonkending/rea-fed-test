@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadPropertyData } from 'actions/property';
 import LoadingIndicator from 'components/LoadingIndicator';
-import Column from 'components/Column';
+import Results from 'containers/Results';
+import SavedProperty from 'containers/SavedProperty';
 
 import styles from 'containers/PropertyApp.scss';
 
@@ -18,8 +19,8 @@ class PropertyApp extends Component {
     return (
         <div className={styles['container']}>
           <LoadingIndicator isFetching={isFetching} />
-          <Column heading="Results" properties={results} />
-          <Column heading="Saved Properties" properties={savedProperty} />
+          <Results properties={results} />
+          <SavedProperty properties={savedProperty} />
         </div>);
 
   }

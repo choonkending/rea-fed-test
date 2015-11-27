@@ -14,22 +14,28 @@ export default class Card extends Component {
     
     this.handleMouseOver = this.handleMouseOver.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+
   }
 
-  handleMouseOver(evt) {
+  handleMouseOver() {
     this.setState({
       isHover: true
     });
   }
 
-  handleMouseOut(evt) {
+  handleMouseOut() {
     this.setState({
       isHover: false
     });
   }
 
+  handleClick(evt) {
+    this.props.handleClick(this.props.id);
+  }
+
   render() {
-    const { price, agency, mainImage } = this.props;
+    const { price, agency, mainImage, buttonText } = this.props;
     const { isHover } = this.state;
     return (
       <div className={cx(
@@ -40,7 +46,7 @@ export default class Card extends Component {
         <div className={cx('card__overlay', {
           'card__overlay--visible': isHover
         })}>
-          <button onClick={evt=> { console.log(evt) }} className={cx('card__button')}>Add Property</button>
+          <button onClick={this.handleClick} className={cx('card__button')}>{buttonText}</button>
         </div>
         <div style={ { backgroundColor: agency.brandingColors.primary }}>
           <img className={cx('card__agency-logo')} src={agency.logo}/>
@@ -59,5 +65,6 @@ Card.propTypes = {
   id: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   agency: PropTypes.object.isRequired,
-  mainImage: PropTypes.string.isRequired
+  mainImage: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired
 };

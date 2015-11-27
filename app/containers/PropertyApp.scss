@@ -1,7 +1,12 @@
+@import "settings";
+
 .container {
 
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
 
 }
