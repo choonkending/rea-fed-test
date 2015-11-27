@@ -15,10 +15,11 @@ class PropertyApp extends Component {
   }
 
   render() {
-    const { isFetching, results, savedProperty } = this.props;
+    const { mainUI, results, savedProperty } = this.props;
+    console.log(results);
     return (
         <div className={styles['container']}>
-          <LoadingIndicator isFetching={isFetching} />
+          <LoadingIndicator isFetching={mainUI.isFetching} />
           <Results properties={results} />
           <SavedProperty properties={savedProperty} />
         </div>);
@@ -30,4 +31,4 @@ class PropertyApp extends Component {
 // Note: Please remove once we have more Container 
 // level Components. This is not performant as 
 // PropertyApp will rerender after every action.
-export default connect(state => state.propertyApp)(PropertyApp);
+export default connect(state => state)(PropertyApp);

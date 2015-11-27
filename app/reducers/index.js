@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import propertyApp from 'reducers/property';
+import mainUI from 'reducers/mainUI';
+import results from 'reducers/results';
+import savedProperty from 'reducers/savedProperty';
 
 const rootReducer = combineReducers({
-  propertyApp
+  mainUI,
+  results,
+  savedProperty
 });
 
 export default rootReducer;
