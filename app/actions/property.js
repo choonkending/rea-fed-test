@@ -44,12 +44,12 @@ export function loadPropertyData() {
     dispatch(fetchPropertyRequest());
 
     return fetch(API_ENDPOINT)
-      .then(response=> {
+      .then(response => {
         if (response.status >= 400) throw new Error("Oops! Something went wrong with our servers.");
         return response.json();
       })
-      .then(json=> dispatch(fetchPropertySuccess(json)))
-      .catch(err=>dispatch(fetchPropertyFailure(err)));
+      .then(json => dispatch(fetchPropertySuccess(json)))
+      .catch(err =>dispatch(fetchPropertyFailure(err)));
 
   };
 }
