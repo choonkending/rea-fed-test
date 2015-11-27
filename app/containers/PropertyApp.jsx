@@ -15,20 +15,22 @@ class PropertyApp extends Component {
   }
 
   render() {
-    const { mainUI, results, savedProperty } = this.props;
-    console.log(results);
+    const { mainUI } = this.props;
     return (
         <div className={styles['container']}>
           <LoadingIndicator isFetching={mainUI.isFetching} />
-          <Results properties={results} />
-          <SavedProperty properties={savedProperty} />
+          <Results />
+          <SavedProperty />
         </div>);
 
   }
 
 }
 
-// Note: Please remove once we have more Container 
-// level Components. This is not performant as 
-// PropertyApp will rerender after every action.
-export default connect(state => state)(PropertyApp);
+function mapStateToProps(state) {
+  return {
+    mainUI: state.mainUI
+  };
+}
+
+export default connect(mapStateToProps)(PropertyApp);

@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import Card from 'components/Card';
 
-export default class Results extends Component {
+class Results extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -33,6 +34,10 @@ export default class Results extends Component {
 
 };
 
-Results.PropTypes = {
-  properties: PropTypes.array.isRequired
-};
+function mapStateToProps(state) {
+  return {
+    properties: state.results
+  }
+}
+
+export default connect(mapStateToProps)(Results);
