@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import Card from 'components/Card';
+import { removeSavedProperty } from 'actions/savedProperty';
 
 export default class SavedProperty extends Component {
   constructor(props) {
@@ -9,8 +10,9 @@ export default class SavedProperty extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(id) {
-    console.log(id);
+  handleClick(index) {
+    const { dispatch } = this.props;
+    dispatch(removeSavedProperty(index));
   }
 
   render() {
