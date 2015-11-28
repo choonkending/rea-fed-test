@@ -1,5 +1,11 @@
 # Instructions
+## Viewing the project
 1. Run `npm install`
+2. Run `npm start` to run server
+3. Go to `http://localhost:3000` in your browser
+
+## Running tests
+1. Run `npm test`
 
 # Acceptance Criteria
 ## Hover over Results
@@ -38,3 +44,4 @@ If that does not work, `npm install node-sass` first, then run `npm install`.
 
 # Improvements
 1. Use [normalizr](https://github.com/gaearon/normalizr) to flatten JSON responses
+2. Use [webpack with karma](https://github.com/webpack/karma-webpack) to run tests with mocha. Solves the relative path issue when testing, and also enables testing with different browsers easily. 
