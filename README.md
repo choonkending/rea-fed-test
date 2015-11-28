@@ -2,6 +2,16 @@
 1. Run `npm install`
 
 # Acceptance Criteria
+## Hover over Results
+* Given I have a property card in the Results column
+* When I hover over the card
+* Then I will see an 'Add Property' button
+
+## Hover over Saved Property
+* Given I have a property card in the Results column
+* When I hover over the card
+* Then I will see an 'Remove Property' button
+
 ## Add property
 * Given I hover over a property card with ID 1 in the Results column
 * And I see an 'Add property' button appear
