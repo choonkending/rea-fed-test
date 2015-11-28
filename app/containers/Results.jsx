@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import Card from 'components/Card';
+import { addProperty } from 'actions/results';
 
 class Results extends Component {
   constructor(props) {
@@ -9,8 +10,10 @@ class Results extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(id) {
-    console.log(id);
+  handleClick(index) {
+    const { dispatch, properties } = this.props;
+
+    dispatch(addProperty(properties[index]));
   }
 
   render() {
@@ -19,11 +22,11 @@ class Results extends Component {
 
     // Map properties to Card component
     // Also pass handleClick function as a prop
-    const renderedProperties = properties.map(property => {
-      return (<Card key={property.id} {...property} 
+    const renderedProperties = properties.map((property, index) => {
+      return (<Card key={index} index={index} {...property} 
         handleClick={this.handleClick}
         buttonText={buttonText} />);
-    })
+    });
     return (
       <div>
         <h1>Results</h1>

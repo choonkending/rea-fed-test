@@ -15,7 +15,7 @@
 * Then the property card with ID 4 will be removed to the Saved Properties column
 
 
-# Questions
+# Problems
 1. When I `npm install` it sometimes stalls when installing node-sass.
 Sometimes node-sass just hangs during npm installation. So `rm -rf node_modules` and try again.
 If that does not work, `npm install node-sass` first, then run `npm install`. 
@@ -25,3 +25,6 @@ If that does not work, `npm install node-sass` first, then run `npm install`.
   - For [testing purposes](https://github.com/tmpvar/jsdom) please use Node.js 4 or newer.
 2. You are not adverse to css-modules. Otherwise, we can have a chat about BEM styling and css-modules. :)
 3. For the purpose of this test, we run on IE10+ (because I opted to use flexbox)
+
+# Improvements
+1. Use [normalizr](https://github.com/gaearon/normalizr) to flatten JSON responses

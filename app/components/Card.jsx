@@ -31,7 +31,10 @@ export default class Card extends Component {
   }
 
   handleClick(evt) {
-    this.props.handleClick(this.props.id);
+    // index refers to the position of the property within the array
+    // of the redux store
+    // it is NOT the id of the property
+    this.props.handleClick(this.props.index);
   }
 
   render() {
@@ -62,7 +65,7 @@ export default class Card extends Component {
 }
 
 Card.propTypes = {
-  id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   price: PropTypes.string.isRequired,
   agency: PropTypes.object.isRequired,
   mainImage: PropTypes.string.isRequired,

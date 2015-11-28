@@ -2,36 +2,35 @@ import { ADD_PROPERTY_REQUEST,
   ADD_PROPERTY_SUCCESS, 
   ADD_PROPERTY_FAILURE } from '../constants';
 
-function addPropertyRequest(id) {
+function addPropertyRequest(property) {
   return {
     type: ADD_PROPERTY_REQUEST,
-    id
+    property
   };
 }
 
-function addPropertySuccess(id) {
+function addPropertySuccess(property) {
   return {
     type: ADD_PROPERTY_SUCCESS,
-    id
+    property
   };
 }
 
-function addPropertyFailure(id) {
+function addPropertyFailure(property) {
   return {
     type: ADD_PROPERTY_FAILURE,
-    id
+    property
   };
 }
 
-export function addProperty(id) {
-  
-  addPropertyRequest(id);
-
-  /*
-   * This is where you'd make the API request
-   * and return a promise that calls 
-   * addPropertySuccess if it is successfull, or
-   * addPropertyFailure if it failed
-   */
-
+export function addProperty(property) {
+  return dispatch => {
+    dispatch(addPropertyRequest(property));
+    /*
+     * This is where you'd make the API request
+     * and return a promise that calls 
+     * addPropertySuccess if it is successfull, or
+     * addPropertyFailure if it failed
+     */
+  };
 };

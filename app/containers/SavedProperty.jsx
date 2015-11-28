@@ -19,11 +19,11 @@ export default class SavedProperty extends Component {
 
     // Map properties to Card component
     // Also pass handleClick function as a prop
-    const renderedProperties = properties.map(property => {
-      return (<Card key={property.id} {...property} 
+    const renderedProperties = properties.map((property, index) => {
+      return (<Card key={index} index={index} {...property} 
         handleClick={this.handleClick}
         buttonText={buttonText} />);
-    })
+    });
     return (
       <div>
         <h1>Saved Property</h1>
