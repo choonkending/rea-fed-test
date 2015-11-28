@@ -7,3 +7,15 @@
 .saved__heading {
   @include column__heading;
 }
+
+.saved__helper {
+  
+  @include column__helper;
+
+}
+
+  .saved__helper--hidden {
+    
+    display: none;
+
+  }

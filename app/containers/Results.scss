@@ -1,9 +1,25 @@
 @import "settings.scss";
 
 .results__column {
+
   @include column;
+
 }
 
 .results__heading {
+
   @include column__heading;
+
 }
+
+.results__helper {
+
+  @include column__helper;
+
+}
+
+  .results__helper--hidden {
+
+    display: none;
+
+  }

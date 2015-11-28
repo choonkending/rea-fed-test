@@ -33,6 +33,9 @@ class Results extends Component {
     return (
       <div className={cx('results__column')}>
         <h1 className={cx('results__heading')}>Results</h1>
+        <small className={cx('results__helper', {
+          'results__helper--hidden': properties.length > 0
+        })}>Select Add Property in your results</small>
         {renderedProperties}
       </div>
     );

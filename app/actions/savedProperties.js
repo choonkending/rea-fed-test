@@ -23,7 +23,7 @@ function removePropertyFailure(index) {
   };
 }
 
-export function removeSavedProperty(index) {
+export function removesavedProperties(index) {
   // For the scope of this test, we do not need
   // to use the dispatch method as a function
   // However, in a real world application, 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadPropertyData } from 'actions/property';
 import LoadingIndicator from 'components/LoadingIndicator';
 import Results from 'containers/Results';
-import SavedProperty from 'containers/SavedProperty';
+import SavedProperties from 'containers/SavedProperties';
 
 import styles from 'containers/PropertyApp.scss';
 
@@ -20,7 +20,7 @@ class PropertyApp extends Component {
         <div className={styles['container']}>
           <LoadingIndicator isFetching={mainUI.isFetching} />
           <Results />
-          <SavedProperty />
+          <SavedProperties />
         </div>);
 
   }

@@ -8,6 +8,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $font-family: 'Montserrat', sans-serif;
+$font-small: 12px;
 $font-medium: 16px;
 $font-large: 21px;
 
@@ -27,6 +28,7 @@ $color-iron: #e2e4e6;
   display: flex;
   flex-direction: column;
 
+  width: 360px;
   height: 100%;
   padding: 12px;
   background: $color;
@@ -36,6 +38,15 @@ $color-iron: #e2e4e6;
 }
 
 @mixin column__heading {
+
   font-size: $font-large;
   margin: 0 0 12px 0;
+
+}
+
+@mixin column__helper {
+
+  font-size: $font-small;
+  font-style: italic;
+
 }

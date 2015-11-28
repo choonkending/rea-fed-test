@@ -1,6 +1,6 @@
 import expect from 'expect';
 import resultsReducer from '../../app/reducers/results';
-import savedPropertyReducer from '../../app/reducers/savedProperty';
+import savedPropertiesReducer from '../../app/reducers/savedProperties';
 import * as types from '../../app/constants/index';
 
 describe('results reducer', () => {
@@ -13,17 +13,17 @@ describe('results reducer', () => {
 
 });
 
-describe('savedProperty reducer', () => {
+describe('savedProperties reducer', () => {
 
   it('should return the initial state', () => {
     expect(
-      savedPropertyReducer(undefined, {})
+      savedPropertiesReducer(undefined, {})
     ).toEqual([]);
   });
 
   it('should handle adding property on empty list', () => {
     expect(
-      savedPropertyReducer(undefined, {
+      savedPropertiesReducer(undefined, {
         type: types.ADD_PROPERTY_REQUEST,
         property: {
           id: "1",
@@ -37,7 +37,7 @@ describe('savedProperty reducer', () => {
 
   it('should handle adding new property to saved list', () => {
     expect(
-      savedPropertyReducer(
+      savedPropertiesReducer(
         [
           {
             id: "1",
@@ -65,7 +65,7 @@ describe('savedProperty reducer', () => {
 
   it('should handle adding existing/duplicate property to saved list', () => {
     expect(
-      savedPropertyReducer(
+      savedPropertiesReducer(
         [
           {
             id: "1",
@@ -89,7 +89,7 @@ describe('savedProperty reducer', () => {
 
   it('should handle removing property from saved list', () => {
     expect(
-      savedPropertyReducer(
+      savedPropertiesReducer(
         [
           {
             id: "1",
