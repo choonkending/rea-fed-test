@@ -10,7 +10,8 @@
     "start": "node devServer.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
