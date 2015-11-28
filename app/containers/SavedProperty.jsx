@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import Card from 'components/Card';
 import { removeSavedProperty } from 'actions/savedProperty';
+import styles from 'containers/SavedProperty.scss';
+
+const cx = classNames.bind(styles);
 
 export default class SavedProperty extends Component {
   constructor(props) {
@@ -27,8 +30,8 @@ export default class SavedProperty extends Component {
         buttonText={buttonText} />);
     });
     return (
-      <div>
-        <h1>Saved Property</h1>
+      <div className={cx('saved__column')}>
+        <h1 className={cx('saved__heading')}>Saved Property</h1>
         {renderedProperties}
       </div>
     );

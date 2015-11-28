@@ -1,0 +1,9 @@
+@import "settings.scss";
+
+.saved__column {
+  @include column;
+}
+
+.saved__heading {
+  @include column__heading;
+}

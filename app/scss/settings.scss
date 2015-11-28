@@ -9,6 +9,7 @@
 
 $font-family: 'Montserrat', sans-serif;
 $font-medium: 16px;
+$font-large: 21px;
 
 /*
  * Colors
@@ -19,3 +20,22 @@ $color-silver: #ccc;
 $color-black: #000;
 $color-monza: #e4002b;
 $color-shiraz: #c40f2b;
+$color-iron: #e2e4e6;
+
+@mixin column($color:$color-iron) {
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  padding: 12px;
+  background: $color;
+  border-radius: 3px;
+  margin: 0 5px;
+
+}
+
+@mixin column__heading {
+  font-size: $font-large;
+  margin: 0 0 12px 0;
+}

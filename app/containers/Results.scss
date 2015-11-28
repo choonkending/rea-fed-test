@@ -1,0 +1,9 @@
+@import "settings.scss";
+
+.results__column {
+  @include column;
+}
+
+.results__heading {
+  @include column__heading;
+}

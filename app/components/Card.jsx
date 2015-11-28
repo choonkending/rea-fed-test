@@ -51,7 +51,7 @@ export default class Card extends Component {
         })}>
           <button onClick={this.handleClick} className={cx('card__button')}>{buttonText}</button>
         </div>
-        <div style={ { backgroundColor: agency.brandingColors.primary }}>
+        <div className={cx('card__agency-wrapper')} style={ { backgroundColor: agency.brandingColors.primary }}>
           <img className={cx('card__agency-logo')} src={agency.logo}/>
         </div>
         <div>

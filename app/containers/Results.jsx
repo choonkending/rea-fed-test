@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import Card from 'components/Card';
 import { addProperty } from 'actions/results';
+import styles from 'containers/Results.scss';
+
+const cx = classNames.bind(styles);
 
 class Results extends Component {
   constructor(props) {
@@ -28,8 +31,8 @@ class Results extends Component {
         buttonText={buttonText} />);
     });
     return (
-      <div>
-        <h1>Results</h1>
+      <div className={cx('results__column')}>
+        <h1 className={cx('results__heading')}>Results</h1>
         {renderedProperties}
       </div>
     );
