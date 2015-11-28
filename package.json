@@ -8,7 +8,7 @@
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
-    "test": "mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
     "lint": "eslint src"
   },
@@ -42,6 +42,7 @@
     "mocha": "^2.3.4",
     "nock": "^3.3.2",
     "node-sass": "^3.4.2",
+    "react-addons-test-utils": "^0.14.3",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",
     "redbox-react": "^1.0.1",

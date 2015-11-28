@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import styles from 'components/Card.scss';
+import styles from './Card.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
