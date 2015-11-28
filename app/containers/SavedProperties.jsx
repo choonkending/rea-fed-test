@@ -48,4 +48,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(savedProperties);
+export default connect(mapStateToProps)(SavedProperties);
