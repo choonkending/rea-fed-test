@@ -5,7 +5,7 @@ import { FETCH_PROPERTY_REQUEST,
 export default function mainUI(state={
   isFetching: false,
   didInvalidate: false
-}, action) {
+}, action={}) {
   switch(action.type) {
     case FETCH_PROPERTY_REQUEST:
       return Object.assign({}, state, {

@@ -9,7 +9,7 @@ import nock from 'nock';
 const middlewares = [ thunk ];
 const mockStore = configureStore(middlewares);
 
-describe('Async Loading Action', () => {
+describe('Async Loading Property Actions', () => {
 
   afterEach(() => {
     nock.cleanAll();
