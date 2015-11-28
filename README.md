@@ -1,8 +1,11 @@
 # Instructions
-## Viewing the project
+## Viewing the project locally
 1. Run `npm install`
 2. Run `npm start` to run server
 3. Go to `http://localhost:3000` in your browser
+
+## View on Heroku
+Click [here](https://rea-fed-test.herokuapp.com/)
 
 ## Running tests
 1. Run `npm test`
@@ -42,6 +45,6 @@ If that does not work, `npm install node-sass` first, then run `npm install`.
 2. You are not adverse to css-modules. Otherwise, we can have a chat about BEM styling and css-modules. :)
 3. For the purpose of this test, we run on IE10+ (because I opted to use flexbox)
 
-# Improvements
+# Potential improvements
 1. Use [normalizr](https://github.com/gaearon/normalizr) to flatten JSON responses
 2. Use [webpack with karma](https://github.com/webpack/karma-webpack) to run tests with mocha. Solves the relative path issue when testing, and also enables testing with different browsers easily. 
