@@ -34,6 +34,6 @@ describe('Async Loading Property Actions', () => {
         }
       }];
     const store = mockStore({ results: [] }, expectedActions, done);
-    store.dispatch(actions.loadPropertyData());
+    store.dispatch(actions.loadPropertyData('http://localhost:3000/property'));
   });
 });

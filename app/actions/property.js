@@ -7,8 +7,7 @@ import { FETCH_PROPERTY_REQUEST,
 // isomorphic-fetch requires an es6-polyfill
 promise.polyfill();
 
-// absolute for nock tests
-const API_ENDPOINT = 'http://localhost:3000/property'
+const API_ENDPOINT = '/property';
 
 export function fetchPropertyRequest() {
   return {
@@ -37,13 +36,15 @@ function fetchPropertyFailure(error) {
   };
 }
 
-export function loadPropertyData() {
+// Allow nock testing to override because nock
+// does not allow absolute URLS
+export function loadPropertyData(api=API_ENDPOINT) {
   return dispatch => {
     // First dispatch the request so inform
     // the user we are loading
     dispatch(fetchPropertyRequest());
 
-    return fetch(API_ENDPOINT)
+    return fetch(api)
       .then(response => {
         if (response.status >= 400) throw new Error("Oops! Something went wrong with our servers.");
         return response.json();
